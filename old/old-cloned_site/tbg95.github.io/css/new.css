@@ -1,0 +1,45 @@
+.h-\[600px\]{
+    height: 600px;
+}
+@media only screen and (min-width: 1300px) {
+    
+    .grid-container .game-container {
+        grid-column: span 7/span 7;
+        grid-column-start: 4;
+        grid-row: span 5/span 5;
+        height: 100%;
+        width: 100%;
+    }
+    .grid-container .ads-300x250-wrapper{
+        grid-row-start: 7;
+        grid-column-start: 4;
+        
+    }
+    .grid-container .ads-300x250-wrapper .w-\[300px\].h-\[250px\]{
+        margin-top:0px;
+    }
+    .grid-container .ads-160x600-wrapper{
+        grid-column: span 2/span 2;
+        grid-column-start: 11;
+        grid-row: span 6/span 6;
+        grid-row-start: 1;
+        flex-direction: column;
+        display: flex;
+    }
+    .grid-container .ads-300x600-wrapper {
+        position: relative;
+        grid-column: span 3/span 3;
+        grid-column-start: 1;
+        grid-row: span 6/span 6;
+        grid-row-start: 1;
+        flex-direction: column;
+        display: flex;
+    }
+    .grid-container .ads-728x90-wrapper{
+        grid-row-start: 6;
+        grid-column-start: 4
+    }
+    #game-description{
+        grid-row-start: 11;
+    }
+}

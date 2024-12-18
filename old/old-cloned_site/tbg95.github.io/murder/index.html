@@ -1,0 +1,229 @@
+<html lang="en" class="wf-quintessence-n4-active wf-active"><head>
+    <meta charset="UTF-8">
+    <title>Murder Game - TBG95</title>
+	<meta name="description" content="Murder is a fun assasination game created by Studio Seufz. Play Murder Game Unblocked on TBG95">
+	<script type="text/javascript" src="//tbg95.github.io/cloak.js"></script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Styles the orientation prompt -->
+    <link rel="stylesheet" href="styles.css" type="text/css" charset="utf-8">
+
+    <link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8">
+
+    <!-- <script src="https://browser.sentry-cdn.com/4.5.2/bundle.min.js" crossorigin="anonymous"></script> -->
+    <!-- <script>Sentry.init({ dsn: 'https://9ffe41e05eec4179adb32b6f179cbb49@sentry.io/1341040' });</script> -->
+	<script src="/poki-sdk.js"></script><style>
+.pokiSdkContainer {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pokiSdkContainer.pokiSdkFixed {
+	position: fixed;
+}
+
+.pokiSdkContainer.pokiSdkVisible {
+	display: block;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer.pokiSdkHidden {
+	display: none;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer {
+	pointer-events: none;
+}
+
+.pokiSdkSpinnerContainer {
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('https://a.poki.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;
+	user-select: none;
+}
+
+.pokiSdkInsideContainer {
+	background: #000;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.pokiSdkContainer.pokiSdkVisible .pokiSdkInsideContainer {
+	opacity: 1;
+}
+
+.pokiSDKAdContainer, .pokiSdkVideoContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.pokiSdkStartAdButton {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+
+	padding-top: 10%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #FFF;
+
+	font: 700 15pt 'Arial', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: 0.1s ease-in-out;
+	line-height: 1em;
+}
+
+.pokiSdkPauseButton {
+	cursor:pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.pokiSdkPauseButton:before {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	user-select: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.5s ease;
+	animation: 1s linear infinite pulse;
+}
+
+.pokiSdkPauseButton:after {
+	content: '';
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 26px 0 26px 40px;
+	pointer-events: none;
+	animation: 1s linear infinite pulse;
+	left: 6px;
+}
+.pokiSdkPauseButtonBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background: rgba(0, 43, 80, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pokiSdkPauseButtonBG:hover{
+	background: rgba(0, 43, 80, 0.7);
+}
+
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+	70% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+.pokiSdkProgressContainer {
+	background: #B8C7DD;
+	width: 100%;
+	height: 5px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+}
+
+.pokiSdkProgressBar {
+	position:relative;
+	bottom:0px;
+	background: #FFDC00;
+	height: 100%;
+	width: 0%;
+	transition: width 0.5s;
+	transition-timing-function: linear;
+}
+
+.pokiSdkProgressBar.pokiSdkVisible, .pokiSdkPauseButton.pokiSdkVisible, .pokiSdkStartAdButton.pokiSdkVisible {
+	display: block;
+	pointer-events: auto;
+}
+
+.pokiSdkProgressBar.pokiSdkHidden, .pokiSdkPauseButton.pokiSdkHidden, .pokiSdkStartAdButton.pokiSdkHidden {
+	display: none;
+	pointer-events: none;
+}
+</style>
+</head>
+
+  <body id="body">
+	<div class="main-nav" id="post">
+		<h1>Murder Game Poki</h1>
+		<p>Murder is a fun assasination game created by Studio Seufz. Creep up behind the king and take him out quickly and quietly. Be careful – if he catches you, it’s off to the dungeon with you! Play Murder and experience what life is like for the typical scheming vizier. If you succeed, you’ll be the new king – but be careful, your adviser is after your crown! Experience Murder online right from your browser with Poki and test your observation and reaction skills. You can play Murder for free, but a wrong move will cost you your life.
+		</p>
+		<h2>How to play Murder</h2>
+		<p>Space - Charge and stab (killer), Look behind (king)</p>
+		<h2>Who created Murder</h2>
+		<p>Murder is created by Studio Seufz based in Stuttgart, Germany.</p>
+		<h2>More Games</h2>
+		<p>If you like Murder game Unblocked and  <a href="https://tbg95.github.io" title="TBG95 Unblocked Games">TBG95 Games</a>. You can play another unblocked games on TBG95. This is list similar games: <br>
+			<ul>
+			<li><a href="https://tbg95.github.io/madalin-stunt-cars-3/" title="Madalin Stunt Cars 2">Madalin Stunt Cars 3</a></li>
+			<li><a href="https://tbg95.github.io/running-fred/" title="Running Fred">Running Fred</a></li>
+			<li><a href="https://tbg95.github.io/raft-wars/" title="Raft Wars">Raft Wars</a></li>
+			<li><a href="https://tbg95.github.io/tunnel-rush/" title="Tunnel Rush">Tunnel Rush</a></li>
+			</ul>
+		</p>
+	</div>
+    <div id="content">
+      <div id="orientation"></div>
+      <div id="gameBackgroundA" style="background-color: rgb(105, 108, 128); height: 360px; width: 50px; background-image: url(&quot;assets/images/wall_level.png&quot;);">
+        <div id="gameBackgroundBottomA" style="height: 39.375px; width: 50px;"></div>
+      </div>
+      <div id="gameBackgroundB" style="background-color: rgb(105, 108, 128); height: 360px; width: 50px; background-image: url(&quot;assets/images/wall_level-flop.png&quot;);">
+        <div id="gameBackgroundBottomB" style="height: 39.375px; width: 50px;"></div>
+      </div>
+</div>
+
+    <script src="main.js"></script>
+  </body></html>
